@@ -2,14 +2,16 @@
 
 #Simple Password Generator 
 
-echo "This is a simple password generator"
-echo "Please enter the length of the password: "
-read PASS_LENGTH
+echo "######################### PASSWORD GENERATOR ##########################"
+echo 
+read -p "Please Enter the length of Password you want >> " PASS_LENGTH
+read -p "How many password you want >> " COUNT
 
-for p in $(seq 1 5);
+echo "Below are $COUNT random combinations : "
+
+for p in $(seq 1 $COUNT);
 do
 	openssl rand -base64 48 | cut -c1-$PASS_LENGTH
-
 done
 
 
